@@ -25,6 +25,7 @@ def get_description():
 setup(
     name="epoc_harvester_simulator",
     packages=["epoc_harvester_simulator"],
+    package_data={'epoc_harvester_simulator': ['data/*.json']},
     test_suite="tests",
     entry_points={
         "console_scripts": [
@@ -37,6 +38,6 @@ setup(
     author="Egor Artemov",
     author_email="egor.artemov@gmail.com",
     url="https://gitlab.com/souryogurt/epoc_harvester_simulator",
-    install_requires=["future"],
+    install_requires=["future", "websockets"],
     setup_requires=[]
 )
