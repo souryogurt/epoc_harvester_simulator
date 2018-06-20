@@ -37,6 +37,7 @@ def main():
     """Entry point."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--verbose', action='store_true', help='be verbose')
+    parser.add_argument('url', help='URL to connect to')
     args = parser.parse_args()
     if args.verbose:
         print('I am verbose')
@@ -47,7 +48,7 @@ def main():
     with open(sample_file) as sample_file:
         sample = sample_file.read()
 
-    asyncio.get_event_loop().run_until_complete(send_data('ws://localhost:5000/headset', sample))
+    asyncio.get_event_loop().run_until_complete(send_data(args.url, sample))
 
 if __name__ == "__main__":
     sys.exit(main())
