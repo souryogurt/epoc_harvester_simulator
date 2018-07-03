@@ -17,7 +17,7 @@ def get_version():
 
 def get_description():
     """Return long description from README."""
-    with open("README.rst", "rb") as readme:
+    with open("README.md", "rb") as readme:
         long_description = readme.read().decode("utf-8")
     return long_description
 
